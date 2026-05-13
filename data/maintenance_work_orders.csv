@@ -1,0 +1,31 @@
+work_order_number,description,date_created,breakdown_type,work_order_status
+WO-2026-0001,"Conveyor CV-101 stopped during packaging line operation. Operator reported motor humming, overload relay tripped, and belt would not restart after reset.",2026-01-06,breakdown,Completed
+WO-2026-0002,"Monthly preventive inspection of centrifugal pump P-204 including bearing temperature check, seal leak inspection, coupling alignment, and vibration reading.",2026-01-08,preventive,Completed
+WO-2026-0003,"Air compressor AC-02 failed to maintain plant air pressure. Discharge temperature high and oil carryover visible at downstream filter drain.",2026-01-10,corrective,In Progress
+WO-2026-0004,"Mixer MX-310 making intermittent grinding noise during startup. Gearbox oil sample shows metallic particles and elevated iron count.",2026-01-14,corrective,Open
+WO-2026-0005,"Replace worn photoelectric sensor on palletizer PL-07 after repeated false jams at infeed gate.",2026-01-17,corrective,Completed
+WO-2026-0006,"Quarterly service of HVAC unit AHU-3: replace filters, inspect fan belt tension, clean condensate pan, and verify thermostat calibration.",2026-01-21,preventive,Completed
+WO-2026-0007,"Boiler feedwater pump P-118 leaking from mechanical seal. Water observed around pump base and seal flush line pressure fluctuating.",2026-01-25,corrective,Completed
+WO-2026-0008,"Filler machine FL-22 emergency stop circuit fault. HMI shows safety relay channel 2 discrepancy and machine cannot reset.",2026-01-29,breakdown,Completed
+WO-2026-0009,"Forklift FLT-05 scheduled 500-hour maintenance including hydraulic hose inspection, brake check, mast lubrication, and battery electrolyte check.",2026-02-02,preventive,Completed
+WO-2026-0010,"Cooling tower CT-1 fan vibration alarm exceeded limit. Inspection found loose motor mount bolts and cracked fan blade root.",2026-02-05,corrective,On Hold
+WO-2026-0011,"Packaging scale SC-14 drifting outside tolerance. Calibration weights show inconsistent readings and load cell cable has damaged insulation.",2026-02-09,corrective,Completed
+WO-2026-0012,"Robotic arm RB-3 stopped mid-cycle with servo drive fault E-32. Axis 4 brake not releasing and encoder feedback unstable.",2026-02-13,breakdown,In Progress
+WO-2026-0013,"Preventive lubrication route for conveyors CV-201 through CV-208. Grease head and tail pulley bearings and inspect belt tracking.",2026-02-17,preventive,Completed
+WO-2026-0014,"Chiller CH-02 low suction pressure alarm. Evaporator sight glass shows bubbles and compressor short cycling under normal load.",2026-02-22,corrective,Open
+WO-2026-0015,"Dust collector DC-6 pulse cleaning ineffective. Differential pressure remains high and several filter bags appear blinded with powder buildup.",2026-02-26,corrective,Completed
+WO-2026-0016,"Labeler LB-11 missed labels on every third bottle. Stepper motor stalls briefly and label web tension fluctuates.",2026-03-03,breakdown,Completed
+WO-2026-0017,"Annual inspection of fire pump FP-01 including churn test, diesel engine battery check, controller alarm verification, and jockey pump review.",2026-03-06,preventive,Completed
+WO-2026-0018,"Heat exchanger HX-9 not reaching outlet temperature target. Steam trap found cold and condensate backing up in return line.",2026-03-10,corrective,Completed
+WO-2026-0019,"Extruder EX-4 barrel zone 3 temperature unstable. Heater contactor chatter observed and thermocouple reading drops intermittently.",2026-03-15,corrective,In Progress
+WO-2026-0020,"Wastewater pump P-330 tripped on overload overnight. Pump casing hot, impeller difficult to rotate, and rags found at suction screen.",2026-03-18,breakdown,Completed
+WO-2026-0021,"Preventive inspection of electrical panel MCC-2: thermal scan, torque check on accessible terminals, clean cabinet, and verify ventilation fan.",2026-03-22,preventive,Completed
+WO-2026-0022,"Oven OV-5 conveyor speed fluctuates during production. VFD output current spikes and tachometer feedback signal drops out.",2026-03-27,corrective,Open
+WO-2026-0023,"CIP skid valve XV-44 stuck closed during rinse cycle. Actuator air pressure normal but position feedback remains closed.",2026-04-01,breakdown,Completed
+WO-2026-0024,"Replace cracked sight glass on tank TK-12 after operator noticed minor seepage around lower gasket.",2026-04-04,corrective,Completed
+WO-2026-0025,"Scheduled calibration of pressure transmitters PT-101, PT-102, and PT-103 on boiler header.",2026-04-08,preventive,Completed
+WO-2026-0026,"Case erector CE-2 magazine fails to feed cartons. Vacuum cups worn and vacuum pressure drops when pick arm extends.",2026-04-12,corrective,Completed
+WO-2026-0027,"Granulator GR-8 vibration increased sharply and screen deck bolts found sheared after jam event.",2026-04-16,breakdown,On Hold
+WO-2026-0028,"Preventive maintenance for nitrogen generator NG-1 including filter replacement, oxygen analyzer check, and valve leak test.",2026-04-20,preventive,Completed
+WO-2026-0029,"Transfer pump P-410 producing low flow to blending tank. Suction strainer partially blocked and pump cavitation noise present.",2026-04-24,corrective,In Progress
+WO-2026-0030,"Automatic door DR-03 opens slowly and reverses before fully closing. Track rollers worn and obstruction sensor lens dirty.",2026-04-29,corrective,Open

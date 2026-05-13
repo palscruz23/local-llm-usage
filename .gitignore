@@ -1,0 +1,5 @@
+.venv/
+.vscode/
+__pycache__/
+.ipynb_checkpoints/
+data/maintenance_work_orders_analysed.csv
