@@ -80,16 +80,37 @@ It also saves the enriched output to `data/maintenance_work_orders_analysed.csv`
 
 ## Troubleshooting
 
-If the notebook raises this error:
+If the notebook raises a 404 error for Ollama, restart the Jupyter kernel and run the notebook again from the top so it uses the latest notebook code.
+
+The notebook calls Ollama's `/api/generate` endpoint:
 
 ```text
-HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/chat
+http://localhost:11434/api/generate
 ```
-
-restart the Jupyter kernel and run the notebook again from the top. The notebook first tries Ollama's `/api/chat` endpoint and then falls back to `/api/generate` for older or different Ollama servers.
 
 You can confirm Ollama is responding with:
 
 ```bash
 curl http://localhost:11434/api/tags
+```
+
+You can also test the exact endpoint used by the notebook:
+
+```bash
+curl http://localhost:11434/api/generate \
+  -d '{"model":"qwen2.5:3b","prompt":"Return JSON with a hello key.","format":"json","stream":false}'
+```
+
+If `/api/tags` or `/api/generate` still returns 404, stop the running Ollama service and restart it:
+
+```bash
+sudo systemctl stop ollama
+sudo systemctl start ollama
+```
+
+Then check the version and model:
+
+```bash
+ollama --version
+ollama list
 ```
