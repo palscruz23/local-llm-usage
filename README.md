@@ -77,3 +77,19 @@ Run the notebook cells from top to bottom. The notebook reads `data/maintenance_
 - `failure_mode`
 
 It also saves the enriched output to `data/maintenance_work_orders_analysed.csv`.
+
+## Troubleshooting
+
+If the notebook raises this error:
+
+```text
+HTTPError: 404 Client Error: Not Found for url: http://localhost:11434/api/chat
+```
+
+restart the Jupyter kernel and run the notebook again from the top. The notebook first tries Ollama's `/api/chat` endpoint and then falls back to `/api/generate` for older or different Ollama servers.
+
+You can confirm Ollama is responding with:
+
+```bash
+curl http://localhost:11434/api/tags
+```
