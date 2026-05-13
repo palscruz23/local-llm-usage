@@ -23,14 +23,47 @@ ollama pull qwen2.5:3b
 
 For a Dell Inspiron 15 5510, this is a practical default because many configurations are CPU-only or have limited shared graphics memory. If you have 16 GB RAM and want better extraction quality, try `qwen2.5:7b`. If the laptop feels slow or has 8 GB RAM, use `llama3.2:3b` or `gemma3:1b`.
 
-## Run
+## Install Ollama
 
-Install Ollama first, then pull the recommended local model:
+If this command fails:
 
 ```bash
 ollama pull qwen2.5:3b
+```
+
+with:
+
+```text
+Command 'ollama' not found
+```
+
+install Ollama first. On Ubuntu or WSL where Snap is available, run:
+
+```bash
+sudo snap install ollama
+```
+
+Then verify the install:
+
+```bash
+ollama --version
+```
+
+After Ollama is installed, pull the recommended model:
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+## Run
+
+Start Ollama in one terminal:
+
+```bash
 ollama serve
 ```
+
+If `ollama serve` says the address is already in use, Ollama is probably already running in the background and you can continue.
 
 In a second terminal, install the Python dependencies and start Jupyter:
 
