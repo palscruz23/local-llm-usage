@@ -15,7 +15,14 @@ This workspace contains a sample maintenance work order dataset and a Jupyter no
 
 ## Install Ollama
 
-Start by installing Ollama with the official Linux installer:
+Start by installing `zstd`, which the Ollama Linux installer needs to extract the download:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y zstd
+```
+
+Then install Ollama with the official Linux installer:
 
 ```bash
 curl -fsSL https://ollama.com/install.sh | sh
@@ -31,6 +38,8 @@ If you previously installed Ollama with Snap and see an internal Snap error, rem
 
 ```bash
 sudo snap remove ollama
+sudo apt-get update
+sudo apt-get install -y zstd
 curl -fsSL https://ollama.com/install.sh | sh
 ollama --version
 ```
