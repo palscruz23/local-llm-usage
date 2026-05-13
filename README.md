@@ -42,7 +42,11 @@ Pull the recommended local model:
 ollama pull qwen2.5:3b
 ```
 
-To try a different model, pull it and update the `MODEL` value in the notebook.
+To try a different model, pull it and update the `MODEL` value in the notebook. You can also set `OLLAMA_MODEL` before starting Jupyter:
+
+```bash
+export OLLAMA_MODEL=llama3.2:3b
+```
 
 Examples:
 
@@ -68,8 +72,11 @@ In a second terminal, install the Python dependencies and start Jupyter:
 python3 -m venv .venv
 source .venv/bin/activate
 python3 -m pip install -r requirements.txt
+python3 -m ipykernel install --user --name local-llm-test --display-name "local-llm-test (.venv)"
 jupyter notebook notebooks/analyse_work_orders_ollama.ipynb
 ```
+
+In Jupyter, select the `local-llm-test (.venv)` kernel before running the notebook.
 
 Run the notebook cells from top to bottom. The notebook reads `data/maintenance_work_orders.csv`, calls the local Ollama model for each work order, parses the JSON response, and adds these dataframe columns:
 
@@ -80,7 +87,41 @@ It also saves the enriched output to `data/maintenance_work_orders_analysed.csv`
 
 ## Troubleshooting
 
-If the notebook raises a 404 error for Ollama, restart the Jupyter kernel and run the notebook again from the top so it uses the latest notebook code.
+If the first import cell spins forever, the notebook kernel is likely stuck or using the wrong Python environment. Stop Jupyter, start it again from the activated `.venv`, and select the project kernel:
+
+```bash
+cd /home/palscruz23/local-llm-test
+source .venv/bin/activate
+python3 -m ipykernel install --user --name local-llm-test --display-name "local-llm-test (.venv)"
+jupyter notebook notebooks/analyse_work_orders_ollama.ipynb
+```
+
+Then in Jupyter use `Kernel > Change Kernel > local-llm-test (.venv)`, followed by `Kernel > Restart Kernel and Run All Cells`.
+
+You can confirm the imports work outside Jupyter with:
+
+```bash
+source .venv/bin/activate
+python3 -c 'from pathlib import Path; import json; import re; import requests; import pandas as pd; print(pd.__version__)'
+```
+
+If the notebook raises this error:
+
+```text
+model 'qwen2.5:3b' not found
+```
+
+Ollama is running, but that model has not been pulled into the local Ollama instance. Pull it, then restart the Jupyter kernel and run the notebook again from the top:
+
+```bash
+ollama pull qwen2.5:3b
+```
+
+If you want to use a model that is already installed, check the available models and set `MODEL` in the notebook to one of those names:
+
+```bash
+ollama list
+```
 
 The notebook calls Ollama's `/api/generate` endpoint:
 
