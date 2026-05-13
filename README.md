@@ -15,15 +15,23 @@ This workspace contains a sample maintenance work order dataset and a Jupyter no
 
 ## Install Ollama
 
-Start by installing Ollama. On Ubuntu or WSL where Snap is available, run:
+Start by installing Ollama with the official Linux installer:
 
 ```bash
-sudo snap install ollama
+curl -fsSL https://ollama.com/install.sh | sh
 ```
 
 Verify the install:
 
 ```bash
+ollama --version
+```
+
+If you previously installed Ollama with Snap and see an internal Snap error, remove the broken Snap package before using the official installer:
+
+```bash
+sudo snap remove ollama
+curl -fsSL https://ollama.com/install.sh | sh
 ollama --version
 ```
 
