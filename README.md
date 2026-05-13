@@ -13,9 +13,23 @@ This workspace contains a sample maintenance work order dataset and a Jupyter no
 - `notebooks/analyse_work_orders_ollama.ipynb`: notebook that reads the CSV and calls Ollama.
 - `requirements.txt`: Python packages required by the notebook.
 
+## Install Ollama
+
+Start by installing Ollama. On Ubuntu or WSL where Snap is available, run:
+
+```bash
+sudo snap install ollama
+```
+
+Verify the install:
+
+```bash
+ollama --version
+```
+
 ## Recommended Ollama model
 
-Start with:
+Pull the recommended local model:
 
 ```bash
 ollama pull qwen2.5:3b
@@ -23,36 +37,14 @@ ollama pull qwen2.5:3b
 
 For a Dell Inspiron 15 5510, this is a practical default because many configurations are CPU-only or have limited shared graphics memory. If you have 16 GB RAM and want better extraction quality, try `qwen2.5:7b`. If the laptop feels slow or has 8 GB RAM, use `llama3.2:3b` or `gemma3:1b`.
 
-## Install Ollama
+To try a different model, pull it and update the `MODEL` value in the notebook.
 
-If this command fails:
-
-```bash
-ollama pull qwen2.5:3b
-```
-
-with:
-
-```text
-Command 'ollama' not found
-```
-
-install Ollama first. On Ubuntu or WSL where Snap is available, run:
+Examples:
 
 ```bash
-sudo snap install ollama
-```
-
-Then verify the install:
-
-```bash
-ollama --version
-```
-
-After Ollama is installed, pull the recommended model:
-
-```bash
-ollama pull qwen2.5:3b
+ollama pull qwen2.5:7b
+ollama pull llama3.2:3b
+ollama pull gemma3:1b
 ```
 
 ## Run
