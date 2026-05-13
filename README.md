@@ -34,16 +34,6 @@ Verify the install:
 ollama --version
 ```
 
-If you previously installed Ollama with Snap and see an internal Snap error, remove the broken Snap package before using the official installer:
-
-```bash
-sudo snap remove ollama
-sudo apt-get update
-sudo apt-get install -y zstd
-curl -fsSL https://ollama.com/install.sh | sh
-ollama --version
-```
-
 ## Recommended Ollama model
 
 Pull the recommended local model:
@@ -51,8 +41,6 @@ Pull the recommended local model:
 ```bash
 ollama pull qwen2.5:3b
 ```
-
-For a Dell Inspiron 15 5510, this is a practical default because many configurations are CPU-only or have limited shared graphics memory. If you have 16 GB RAM and want better extraction quality, try `qwen2.5:7b`. If the laptop feels slow or has 8 GB RAM, use `llama3.2:3b` or `gemma3:1b`.
 
 To try a different model, pull it and update the `MODEL` value in the notebook.
 
